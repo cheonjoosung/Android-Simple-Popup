@@ -2,7 +2,7 @@
 This is a Custom Simple-Popup for Android.
 
 ## Sample
-<img src="https://github.com/cheonjoosung/Android-Simple-Popup/blob/master/image/sample.jpeg">
+<img src="https://github.com/cheonjoosung/Android-Simple-Popup/blob/master/image/sample.jpeg" alt="sample" height="500" width="300">
 
 
 ## How To
