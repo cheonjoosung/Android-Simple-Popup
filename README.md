@@ -26,7 +26,7 @@ pluginManagement {
     repositories {
         gradlePluginPortal()
         google()
-        maven { url "https://jitpack.io" }
+        maven { url "https://jitpack.io" } // add this line
         mavenCentral()
     }
 
@@ -35,8 +35,8 @@ dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
         google()
-        maven { url "https://jitpack.io" }
-        mavenCentral()
+        maven { url "https://jitpack.io" } // add this line
+
     }
 }
 ```
