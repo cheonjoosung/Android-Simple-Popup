@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="app/src/main/res/drawable/ic_baseline_looks_3_24.xml" value="0.2965" />
+        <entry key="app/src/main/res/drawable/ic_baseline_looks_one_24.xml" value="0.2965" />
+        <entry key="app/src/main/res/drawable/ic_baseline_looks_two_24.xml" value="0.2965" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.3491847826086957" />
+        <entry key="simple_popup/src/main/res/drawable/bg_transparent.xml" value="0.304" />
+        <entry key="simple_popup/src/main/res/layout/item_simple_popup.xml" value="0.375" />
+        <entry key="simple_popup/src/main/res/layout/layout_simple_popup.xml" value="0.25329280648429586" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
