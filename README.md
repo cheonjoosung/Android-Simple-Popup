@@ -51,38 +51,53 @@ dependencies {
 
 ## Sample Code
 ```kotlin
-val tv = findViewById<TextView>(R.id.tv)
 tv.setOnClickListener {
+
     val list = mutableListOf<SimplePopupValue>().apply {
         add(SimplePopupValue("menu_title_01", R.mipmap.ic_launcher))
         add(SimplePopupValue("menu_title_02", R.mipmap.ic_launcher))
         add(SimplePopupValue("menu_title_03", R.mipmap.ic_launcher))
     }
 
-    SimplePopup(context = applicationContext, popupList = list) { _, popupValue, position ->
+    val popup = SimplePopup(
+        context = applicationContext,
+        popupList = list,
+        menuTitleColor = Color.RED,   // option menuItem TitleColor default black
+        menuVLineColor = Color.YELLOW // option menuItem V underlineColor default black
+    ) { _, popupValue, position ->
         when (position) {
             0 -> {
-                Toast.makeText(applicationContext,
+                Toast.makeText(
+                    applicationContext,
                     "Clicked $position ${popupValue.title}",
-                    Toast.LENGTH_SHORT).show()
+                    Toast.LENGTH_SHORT
+                ).show()
             }
 
             1 -> {
-                Toast.makeText(applicationContext,
+                Toast.makeText(
+                    applicationContext,
                     "Clicked $position ${popupValue.title}",
-                    Toast.LENGTH_SHORT).show()
+                    Toast.LENGTH_SHORT
+                ).show()
             }
 
             2 -> {
-                Toast.makeText(applicationContext,
+                Toast.makeText(
+                    applicationContext,
                     "Clicked $position ${popupValue.title}",
-                    Toast.LENGTH_SHORT).show()
+                    Toast.LENGTH_SHORT
+                ).show()
             }
         }
     }.apply {
         isOutsideTouchable = true
         isTouchable = true
-        showAsDropDown(it, 60, 10)
     }
+
+    // option menuItem Background
+    popup.setSimplePopupBackGround(Color.BLUE)
+    popup.showAsDropDown(it, 60, 10)
+
 }
 ```
