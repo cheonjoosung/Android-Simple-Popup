@@ -2,6 +2,7 @@ package com.example.simple_popup
 
 import android.app.ActionBar
 import android.content.Context
+import android.graphics.Color
 import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.View
@@ -16,13 +17,17 @@ import com.example.simple_popup.databinding.LayoutSimplePopupBinding
 class SimplePopup(
     context: Context,
     popupList: MutableList<SimplePopupValue>,
-    menuItemListener: (View?, SimplePopupValue, Int) -> Unit,
+    menuTitleColor: Int = Color.BLACK,
+    menuVLineColor: Int = Color.BLACK,
+    menuItemListener: (View?, SimplePopupValue, Int) -> Unit
 ) : PopupWindow(context) {
+
+    private var binding:LayoutSimplePopupBinding
 
     init {
         val inflater = LayoutInflater.from(context)
 
-        val binding = LayoutSimplePopupBinding.inflate(inflater, null, false)
+        binding = LayoutSimplePopupBinding.inflate(inflater, null, false)
 
         // PopupWindow Value Setting
         contentView = binding.root
@@ -37,6 +42,9 @@ class SimplePopup(
             val tvMenuTitle = view.findViewById(R.id.tv_menu_title) as TextView
             val ivMenuIcon = view.findViewById(R.id.iv_menu_icon) as ImageView
             val vLine = view.findViewById(R.id.v_line) as View
+
+            tvMenuTitle.setTextColor(menuTitleColor)
+            vLine.setBackgroundColor(menuVLineColor)
 
             tvMenuTitle.text = popupList[i].title
             ivMenuIcon.setImageResource(popupList[i].resId)
@@ -61,6 +69,10 @@ class SimplePopup(
     private fun getDp(context: Context, value: Float): Int {
         val dm = context.resources.displayMetrics
         return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, value, dm).toInt()
+    }
+
+    fun setSimplePopupBackGround(color: Int) {
+        binding.llSimplePopup.setBackgroundColor(color)
     }
 
 }
